@@ -3,35 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda en Línea</title>
+    <title>Tienda en Línea - Iniciar Sesión</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Establece el fondo de pantalla GIF */
+        body {
+            background-image: url('go.gif'); /* Reemplaza 'tu-ruta/gif.gif' con la ubicación de tu archivo GIF */
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
-<body>
-
-<div class="container mx-auto mt-4">
-    <h1 class="text-3xl font-bold mb-4">Tienda en Línea</h1>
-
-    <!-- Lista de Productos -->
-    <div class="grid grid-cols-3 gap-4">
-        <div class="p-4 border">
-            <h2 class="text-xl font-semibold">Producto 1</h2>
-            <p>Descripción del Producto 1</p>
-            <p>Precio: $10.00</p>
-            <button class="bg-blue-500 text-white px-4 py-2 mt-2">Agregar al Carrito</button>
-        </div>
-        <!-- Aquí puedes agregar más productos de manera similar -->
+<body class="bg-blue-900 flex justify-center items-center h-screen">
+    <div class="bg-yellow-300 p-8 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-semibold mb-4">¡Comencemos con esto!</h1>
+        <form>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-600 text-sm font-semibold">Correo Electrónico</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-200" placeholder="example@example.com" required>
+            </div>
+            <button id="redirigirBtn" class="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition duration-300 float-right">Entrar</button>
+        </form>
     </div>
 
-    <!-- Carrito de Compra -->
-    <div class="mt-4">
-        <h2 class="text-2xl font-semibold">Carrito de Compra</h2>
-        <ul id="carrito" class="mt-2">
-            <!-- Los elementos del carrito se agregarán aquí -->
-        </ul>
-        <button id="realizarOrden" class="bg-green-500 text-white px-4 py-2 mt-2">Realizar Orden</button>
-    </div>
-</div>
-
+    <script>
+        const redirigirBtn = document.getElementById("redirigirBtn");
+    
+        redirigirBtn.addEventListener("click", function (e) {
+            e.preventDefault(); // Detiene el envío del formulario
+    
+            // Agregar una clase para mostrar un mensaje de carga
+            const div = document.createElement("div");
+            div.innerHTML = '<div class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black opacity-75 z-50"><div class="text-2xl font-semibold text-white">Cargando...</div></div>';
+            document.body.appendChild(div);
+    
+            // Simular una espera de 3 segundos antes de redirigir
+            setTimeout(() => {
+                // Redirigir a la página de carga (reemplaza la URL con la deseada)
+                window.location.href = "file:///C:/Users/MINEDUCYT/Desktop/Store/onlineStore/src/html.html";
+            }, 3000);
+        });
+    </script>
 </body>
-<script src="main.js"></script>
 </html>
