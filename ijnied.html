@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ... (tu código HTML y CSS existente) ... -->
+</head>
+<body class="bg-gray-100">
+    <!-- ... (tu código HTML existente) ... -->
+    <div class="container mx-auto mt-8 px-4">
+        <h2 class="text-2xl font-semibold">Productos Destacados</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+            <!-- Producto 1 -->
+            <div class="bg-white p-4 shadow-lg rounded-lg">
+                <!-- ... (contenido del producto) ... -->
+                <button data-name="Producto 1" data-price="10.00" class="add-to-cart bg-blue-500 text-white px-4 py-2 mt-2 hover:bg-blue-600 transition duration-300">Agregar al Carrito</button>
+                <button data-name="Producto 1" class="remove-from-list bg-red-500 text-white px-2 py-1 ml-2 hover:bg-red-600">Eliminar</button>
+            </div>
+            <!-- ... (otros productos) ... -->
+        </div>
+    </div>
+    <!-- ... (tu código HTML existente) ... -->
+    <!-- Carrito de Compra -->
+    <div class="cart-container" id="cartContainer">
+        <h2 class="text-2xl font-semibold">Carrito de Compra</h2>
+        <ul id="cart" class="mt-2">
+            <!-- Los elementos del carrito se agregarán aquí -->
+        </ul>
+        <p class="font-semibold mt-4">Total: <span id="cartTotal">$0.00</span></p>
+        <button id="realizarOrden" class="bg-green-500 text-white px-4 py-2 mt-4 w-full">Realizar Orden</button>
+    </div>
+</body>
+<script>
+    // ... (tu código JavaScript existente) ...
+    
+    // Agregar un listener para los botones de eliminación en la lista de productos destacados
+    const removeFromListButtons = document.querySelectorAll('.remove-from-list');
+    
+    removeFromListButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const name = button.getAttribute('data-name');
+            const product = button.parentNode;
+            product.style.display = 'none';
+        });
+    });
+
+    // Agregar un listener para los botones de eliminación en el carrito de compras
+    const removeFromCartButtons = document.querySelectorAll('.remove-from-cart');
+
+    removeFromCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const name = button.getAttribute('data-name');
+            const itemIndex = cart.findIndex(item => item.name === name);
+
+            if (itemIndex !== -1) {
+                cart.splice(itemIndex, 1);
+                renderCart();
+            }
+        });
+    });
+</script>
+</html>
+a
