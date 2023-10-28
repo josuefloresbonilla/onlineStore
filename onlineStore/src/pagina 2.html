@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda en Línea - Iniciar Sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Establece el fondo de pantalla GIF */
+        body {
+            background-image: url('go.gif'); /* Reemplaza 'tu-ruta/gif.gif' con la ubicación de tu archivo GIF */
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+      <section>
+        <div
+          class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
+        ></div>
+      
+        <div
+          class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
+        >
+          <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+            <h1 class="text-3xl font-extrabold sm:text-5xl">
+            Empecemos con esto!
+            </h1>
+      
+            <p class="text-white    mt-5 max-w-lg sm:text-xl/relaxed ">
+                Para comprar y vender de una manera más sencilla hemos decidido necesitar unicamente tu "correo electronico" para poder iniciar.
+            </p>
+
+              <div class="container mx-auto py-16">
+                <div class="p-8 rounded-lg shadow-lg max-w-md mx-auto">
+                    <h1 class=" text-green-500 SIUUUUUUUUUUUUUUUUUU text-2xl font-semibold ">Verificación de Correo Electrónico</h1>
+                    <form id="verificationForm" class="space-y-4">
+                        <div>
+                            <label for="email" class="block text-gray-100">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required class="w-full p-2 border rounded-md focus:outline-none focus:border-blue-500">
+                        </div>
+                        <button type="button" onclick="verificarCorreo()" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none">Verificar</button>
+                    </form>
+                    <p id="resultado" class="mt-4 text-blue-300 font-semibold"></p>
+                </div>
+            </div>
+        
+            <script>
+                function verificarCorreo() {
+                    var email = document.getElementById("email").value;
+
+                    document.getElementById("resultado").innerHTML = "Correo electrónico verificado con éxito. redirigiendonos a la pantalla principal";
+                    setTimeout(function() {
+                        window.location.href = "file:///C:/Users/MINEDUCYT/Desktop/Store/onlineStore/src/pagina%203.html"; // Redirige a el sitio web donde estan todas las cosas 
+                    }, 2000); // Redirige después de 2 segundos
+                }
+            </script>
+              
+              
+        
+              
+            
+            </div>
+          </div>
+        </div>
+      </section>
+</body>
+</html>

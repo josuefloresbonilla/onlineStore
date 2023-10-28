@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda en Línea</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    
+    <style>
+        /*Aquí ponemos el giffff de fondo para que se vea bonito*/
+            body {
+                background-image: url('dogss.gif'); 
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+
+        /* Estilos para el botón del carrito */
+        .cart-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #3182ce;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        /* Estilos para el carrito de compras desplegado */
+        .cart-container {
+            display: none;
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* Estilos para el botón "Eliminar" */
+        .remove-from-list {
+            background-color: #EF4444; /* Color de fondo rojo */
+            color: white; /* Texto en blanco */
+            padding: 0.5rem 1rem; /* Relleno del botón */
+            border-radius: 0.25rem; /* Bordes redondeados */
+            cursor: pointer; /* Cambia el cursor al pasar el mouse */
+        }
+
+        .remove-from-list:hover {
+            background-color: #F87171; /* Color de fondo rojo más claro al pasar el mouse */
+        }
+    </style>
+</head>
+<body class="bg-blue-900">
+    
+
+<!-- Encabezado de la Página SIUUUUUUUUUUUUUUUUUUUU -->
+<header class="bg-opacity-0 py-4">
+    <div class="container mx-auto text-white text-center">
+        <h1 class="text-4xl font-semibold">¡Bienvenido!</h1>
+        <p class=" text-blue-400 text-lg mt-2">Diviértete buscando lo que quieres, cuando quieras y donde quieras.</p>
+    </div>
+</header>
+
+<!--Esto es la barra de busquedaa-->
+<div class="relativemin-h-screen flex items-center justify-center">
+    <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+      <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6">
+          <path d="M21 21l-4-4"></path>
+          <path d="M15 10a5 5 0 11-10 0 5 5 0 0110 0"></path>
+        </svg>
+      </button>
+    </span>
+    <input type="search" name="search" class="py-2 text-sm text-white rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900" placeholder="Buscar algún producto">
+  </div>
+  
+
+
+<!-- Contenido Principal de la Página -->
+<div class="container mx-auto mt-8 px-4">
+    <h2 class="text-2xl font-semibold">Productos Destacados</h2>
+
+    <!-- Lista de Productos Destacados -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+        <!-- Producto 1 -->
+        <div class="bg-white -300 p-4 shadow-lg rounded-lg ">
+            <img src="Book.jpeg" alt="Producto 1" class="w-full h-48 object-cover rounded">
+            <h3 class="text-lg font-semibold mt-2">Producto 1</h3>
+            <p class="text-gray-600 text-sm mt-1">Man es el libro de Grabity FALLS ._.</p>
+            <p class="text-xl font-semibold mt-1">$10.00</p>
+            <button data-name="Producto 1" data-price="10.00" class="add-to-cart bg-blue-500 text-white px-4 py-2 mt-2 hover:bg-blue-600 transition duration-300  border border-gray-300 rounded-full p-4">Agregar al Carrito</button>
+            <button data-name="Producto 1" class="remove-from-list bg-red-500 text-white px-2 py-1 ml-2 hover:bg-red-600 mt-2">Eliminar</button>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="bg-white p-4 shadow-lg rounded-lg">
+            <img src="BLABAL.png" alt="Producto 2" class="w-full h-48 object-cover rounded">
+            <h3 class="text-lg font-semibold mt-2">Producto 2</h3>
+            <p class="text-gray-600 text-sm mt-1">La bandera de mi tío Hitler a un buen precio.</p>
+            <p class="text-xl font-semibold mt-1">$15.00</p>
+            <button data-name="Producto 2" data-price="15.00" class="add-to-cart bg-blue-500 text-white px-4 py-2 mt-2 hover:bg-blue-600 transition duration-300 border border-gray-300 rounded-full p-4">Agregar al Carrito</button>
+            <button data-name="Producto 2" class="remove-from-list bg-red-500 text-white px-2 py-1 ml-2 hover:bg-red-600 mt-2">Eliminar</button>
+        </div>
+
+         <!-- Producto 3-->
+         <div class="bg-white p-4 shadow-lg rounded-lg">
+            <img src="jijijijji.jpg" alt="Producto 3" class="w-full h-48 object-cover rounded">
+            <h3 class="text-lg font-semibold mt-2">Producto 3</h3>
+            <p class="text-gray-600 text-sm mt-1">Reloj futurista</p>
+            <p class="text-xl font-semibold mt-1">$60.00</p>
+            <button data-name="Producto 3" data-price="60.00" class="add-to-cart bg-blue-500 text-white px-4 py-2 mt-2 hover:bg-blue-600 transition duration-300 border border-gray-300 rounded-full p-4">Agregar al Carrito</button>
+            <button data-name="Producto 3" class="remove-from-list bg-red-500 text-white px-2 py-1 ml-2 hover:bg-red-600 mt-2">Eliminar</button>
+        </div>
+
+        <!-- Producto 4-->
+        <div class="bg-white p-4 shadow-lg rounded-lg">
+            <img src="bebe.jpeg" alt="Producto 4" class="w-full h-48 object-cover rounded">
+            <h3 class="text-lg font-semibold mt-2">Producto 4</h3>
+            <p class="text-gray-600 text-sm mt-1">Vendemos a Carlitos</p>
+            <p class="text-xl font-semibold mt-1">$1.00</p>
+            <button data-name="Producto 4" data-price="1.00" class="add-to-cart bg-blue-500 text-white px-4 py-2 mt-2 hover:bg-blue-600 transition duration-300 border border-gray-300 rounded-full p-4">Agregar al Carrito</button>
+            <button data-name="Producto 4" class="remove-from-list bg-red-500 text-white px-2 py-1 ml-2 hover:bg-red-600 mt-2">Eliminar</button>
+        </div>
+        
+<!-- Producto 5-->
+        <div class="bg-white p-4 shadow-lg rounded-lg">
+            <img src="Gomu Gomu No mi Riquisima!!!!.jpeg" alt="Producto 4" class="w-full h-48 object-cover rounded">
+            <h3 class="text-lg font-semibold mt-2">Producto 4</h3>
+            <p class="text-gray-600 text-sm mt-1">Fruta Gomu de ONE PIECEEEEEEEEEEEEEEE</p>
+            <p class="text-xl font-semibold mt-1">$1000000000.00</p>
+            <button data-name="Producto 4" data-price="100000000.00" class="add-to-cart bg-blue-500 text-white px-4 py-2 mt-2 hover:bg-blue-600 transition duration-300 border border-gray-300 rounded-full p-4">Agregar al Carrito</button>
+            <button data-name="Producto 4" class="remove-from-list bg-red-500 text-white px-2 py-1 ml-2 hover:bg-red-600 mt-2">Eliminar</button>
+        </div>
+
+        <!-- Producto 6-->
+        <div class="bg-white p-4 shadow-lg rounded-lg">
+            <img src="descarga.jpeg" alt="Producto 4" class="w-full h-48 object-cover rounded">
+            <h3 class="text-lg font-semibold mt-2">Producto 4</h3>
+            <p class="text-gray-600 text-sm mt-1">Un Mazda Rx7 fc con turbo x4000 caballos de fuerza y un aeromatizante de oro.</p>
+            <p class="text-xl font-semibold mt-1">$800.00</p>
+            <button data-name="Producto 4" data-price="800.00" class="add-to-cart bg-blue-500 text-white px-4 py-2 mt-2 hover:bg-blue-600 transition duration-300 border border-gray-300 rounded-full p-4">Agregar al Carrito</button>
+            <button data-name="Producto 4" class="remove-from-list bg-red-500 text-white px-2 py-1 ml-2 hover:bg-red-600 mt-2">Eliminar</button>
+        </div>
+ <!-- Producto 7-->
+        <div class="bg-white p-4 shadow-lg rounded-lg">
+            <img src="todo.png" alt="Producto 4" class="w-full h-48 object-cover rounded">
+            <h3 class="text-lg font-semibold mt-2">Producto 4</h3>
+            <p class="text-gray-600 text-sm mt-1">Call4Help una aplicación boonita para ayudar a las personas</p>
+            <p class="text-xl font-semibold mt-1">$10.00</p>
+            <button data-name="Producto 4" data-price="10.00" class="add-to-cart bg-blue-500 text-white px-4 py-2 mt-2 hover:bg-blue-600 transition duration-300 border border-gray-300 rounded-full p-4">Agregar al Carrito</button>
+            <button data-name="Producto 4" class="remove-from-list bg-red-500 text-white px-2 py-1 ml-2 hover:bg-red-600 mt-2">Eliminar</button>
+        </div>
+
+        <!-- Producto 8-->
+        <div class="bg-white p-4 shadow-lg rounded-lg">
+            <img src="Spinner.jpeg" alt="Producto 4" class="w-full h-48 object-cover rounded">
+            <h3 class="text-lg font-semibold mt-2">Producto 4</h3>
+            <p class="text-gray-600 text-sm mt-1">Super Spinner de oro briyante con lava ardiendo y fuego que quema</p>
+            <p class="text-xl font-semibold mt-1">$1000.000</p>
+            <button data-name="Producto 4" data-price="1000.00" class="add-to-cart bg-blue-500 text-white px-4 py-2 mt-2 hover:bg-blue-600 transition duration-300 border border-gray-300 rounded-full p-4">Agregar al Carrito</button>
+            <button data-name="Producto 4" class="remove-from-list bg-red-500 text-white px-2 py-1 ml-2 hover:bg-red-600 mt-2">Eliminar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Botón del Carrito de Compra -->
+<div class="cart-button" id="cartButton">
+    <span id="cartItemCount">0</span> <i class="fas fa-shopping-cart"></i>
+</div>
+
+<!-- Carrito de Compra -->
+<div class="cart-container" id="cartContainer">
+    <h2 class="text-2xl font-semibold">Carrito de Compra</h2>
+    <ul id="cart" class="mt-2">
+        <!-- Los elementos del carrito se agregarán aquí -->
+    </ul>
+    <p class="font-semibold mt-4">Total: <span id="cartTotal">$0.00</span></p>
+    <button id="realizarOrden" class="bg-green-500 text-white px-4 py-2 mt-4 w-full">Realizar Orden</button>
+</div>
+
+<!-- Pie de Página -->
+<footer class="bg-blue-500 py-4 mt-8 text-white text-center">
+    <div class="container mx-auto">
+        <p>&copy; Tienda tienda tienda.</p>
+    </div>
+</footer>
+
+<script>
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const cartButton = document.getElementById('cartButton');
+    const cartContainer = document.getElementById('cartContainer');
+    const cartItemCount = document.getElementById('cartItemCount');
+    const cartTotal = document.getElementById('cartTotal');
+    const realizarOrdenButton = document.getElementById('realizarOrden');
+    const cart = [];
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const name = button.getAttribute('data-name');
+            const price = parseFloat(button.getAttribute('data-price'));
+            const item = { name, price };
+            cart.push(item);
+            renderCart();
+        });
+    });
+
+    function renderCart() {
+        cartItemCount.textContent = cart.length;
+        cartContainer.style.display = cart.length > 0 ? 'block' : 'none';
+
+        const cartList = document.getElementById('cart');
+        cartList.innerHTML = '';
+        let total = 0;
+
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.innerText = `${item.name}: $${item.price.toFixed(2)}`;
+            cartList.appendChild(li);
+            total += item.price;
+        });
+
+        cartTotal.textContent = `$${total.toFixed(2)}`;
+    }
+
+    realizarOrdenButton.addEventListener('click', () => {
+        // Aquí puedes agregar la lógica para realizar la orden
+        alert('Orden realizada');
+        // Limpia el carrito después de realizar la orden
+        cart.length = 0;
+        renderCart();
+    });
+
+    cartButton.addEventListener('click', () => {
+        if (cartContainer.style.display === 'none' || cartContainer.style.display === '') {
+            cartContainer.style.display = 'block';
+        } else {
+            cartContainer.style.display = 'none';
+        }
+    });
+
+    // Agregar un listener para los botones de eliminación
+    const removeFromListButtons = document.querySelectorAll('.remove-from-list');
+
+    removeFromListButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const name = button.getAttribute('data-name');
+            const product = button.parentNode; // Obtén el contenedor del producto
+            product.style.display = 'none'; // Oculta el producto
+        });
+    });
+</script>
+
+</body>
+</html>
